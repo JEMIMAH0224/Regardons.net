@@ -179,11 +179,6 @@
                 Déjà membre ? <a href="{{ route('login') }}">Se connecter</a>
             </p>
 
-            {{-- Bottom reassurance text --}}
-            <div class="register-note">
-                Email de vérification envoyé ·
-            </div>
-
         </div>
     </div>
 </section>

@@ -110,7 +110,7 @@ class CreateNewUser implements CreatesNewUsers
             // If your User model has 'password' => 'hashed' cast,
             // you typically do NOT need Hash::make() here (Laravel will hash automatically).
             // If you do not use the 'hashed' cast, then Hash::make() is required.
-            'password' => Hash::make($input['password']),
+            'password' => $input['password'],
         ]);
     }
 }

@@ -968,6 +968,112 @@
     background: #d79514;
 }
 
+/* 
+   Overall section wrapper for the verify email page.
+   Uses full viewport height and centers content vertically.
+*/
+.verify-section {
+    min-height: 100vh; /* Take full screen height */
+    display: flex; /* Enable flexbox layout */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    background: #f5f5f7; /* Light grey background */
+    padding: 24px; /* Small padding on mobile */
+}
+
+/*
+   Container for the card.
+   Acts like a centered panel with white background and shadow.
+*/
+.verify-container {
+    max-width: 480px; /* Limit the width for better readability */
+    width: 100%; /* Allow it to shrink on small screens */
+    background: #ffffff; /* White card background */
+    border-radius: 12px; /* Rounded corners */
+    padding: 32px 28px; /* Inner spacing */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Soft shadow */
+    text-align: center; /* Center text */
+}
+
+/* Page title style */
+.verify-container h1 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+/* Short description text */
+.verify-container p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/*
+   Success message box.
+   Shown only when a new link has been sent.
+*/
+.success-message {
+    background-color: #e6f7ea; /* Light green background */
+    color: #1e7e34; /* Dark green text */
+    border: 1px solid #b7e1c2; /* Border matching the background */
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* 
+   The resend form can stay simple; we mainly style the button.
+   We still reset margin to avoid unwanted extra spacing.
+*/
+.verify-container form {
+    margin: 0;
+}
+
+/*
+   Main button for "Renvoyer l’e-mail de vérification"
+   Styled like a primary action button.
+*/
+.verify-container button[type="submit"] {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px; /* Pill shape */
+    border: none;
+    background-color: #01696f; /* Teal primary color */
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+/* Hover effect for the button (desktop) */
+.verify-container button[type="submit"]:hover {
+    background-color: #0c4e54; /* Slightly darker teal */
+    transform: translateY(-1px); /* Tiny lift effect */
+}
+
+/* Focus style for accessibility (keyboard navigation) */
+.verify-container button[type="submit"]:focus-visible {
+    outline: 2px solid #0c4e54;
+    outline-offset: 3px;
+}
+
+/* Small responsive tweak for very narrow screens */
+@media (max-width: 480px) {
+    .verify-container {
+        padding: 24px 18px;
+    }
+
+    .verify-container h1 {
+        font-size: 1.4rem;
+    }
+}
+
 /* LOGIN LINK + FOOTER NOTE */
 
 /* 

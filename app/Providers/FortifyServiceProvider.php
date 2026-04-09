@@ -36,6 +36,12 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.register');
         });
 
+         // This tells Fortify which Blade view to show
+        // after registration when the user must verify their email
+        Fortify::verifyEmailView(function () {
+            return view('auth.verify-email');
+        });
+
         // These are the default Fortify actions
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);

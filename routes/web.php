@@ -6,7 +6,13 @@ use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     return view('pages.home');
 })->name('homepage');
-Route::middleware(['auth'])->group(function () {
+
+
+/*Once email verification is enabled, the "verified" middleware to routes that should
+ only be accessible after the user verifies their email. 
+ Laravel’s email verification system uses that middleware to block unverified users.
+ */
+Route::middleware(['auth' , 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard'); // or your gallery/home for logged in users
     })->name('dashboardpage');
