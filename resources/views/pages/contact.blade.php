@@ -305,7 +305,7 @@
 
             old('message') restores the typed message after validation fails.
         --}}
-        <textarea id="message" name="message" rows="6" placeholder="Votre message...">{{ old('message') }}</textarea>
+        <textarea id="message" name="message" maxlength="140"rows="6" placeholder="Votre message...">{{ old('message') }}</textarea>
 
         {{--
             Show validation error for the message field if it exists.

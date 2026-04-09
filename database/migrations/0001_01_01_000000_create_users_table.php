@@ -13,11 +13,29 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+
+            // Username column (text, can be made unique)
+            $table->string('username');
+
+            // First name column
+            $table->string('first_name');
+
+            // Last name column
+            $table->string('last_name');
+
+            // Email column must be unique
             $table->string('email')->unique();
+
+            // Timestamp when email is verified; can be null initially
             $table->timestamp('email_verified_at')->nullable();
+
+            // Password column
             $table->string('password');
+
+            // Remember token for "remember me" login
             $table->rememberToken();
+
+            // created_at and updated_at timestamps
             $table->timestamps();
         });
 
@@ -42,8 +60,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
+        // Drop tables in reverse order of creation
         Schema::dropIfExists('sessions');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('users');
     }
 };
