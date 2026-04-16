@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'home' => '/',
+    'home' => '/dashboard', /*This tells Fortify where to send the user after registration/login by default*/
 
     /*
     |--------------------------------------------------------------------------
