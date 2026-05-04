@@ -58,6 +58,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('pages.dashboard');
     })->name('dashboardpage');
 });
+
+//test or check if the email verification works perfectly well
 Route::get('testmail',function (){
     Mail::raw('Ceci est le contenu de mon mail en texte brut.', function ($message) {
         $message->to('coucou@moi.com')
