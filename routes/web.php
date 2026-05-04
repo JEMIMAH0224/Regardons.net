@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -56,4 +57,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('pages.dashboard');
     })->name('dashboardpage');
+});
+Route::get('testmail',function (){
+    Mail::raw('Ceci est le contenu de mon mail en texte brut.', function ($message) {
+        $message->to('coucou@moi.com')
+                ->subject('Sujet du message');
+});
 });
