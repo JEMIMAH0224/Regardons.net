@@ -24,10 +24,10 @@ class RolesAndPermissionsSeeder extends Seeder
         $memberRole = Role::create(['name' => 'member']);
 
         // Create permissions
-         $createPosts = Permission::create(['name' => 'create posts']);
-        $readPosts = Permission::create(['name' => 'read posts']);
-        $editPosts = Permission::create(['name' => 'edit posts']);
-        $deletePosts = Permission::create(['name' => 'delete posts']);
+         $createArticles = Permission::create(['name' => 'create articles']);
+        $readArticles = Permission::create(['name' => 'read articles']);
+        $editArticles = Permission::create(['name' => 'edit articles']);
+        $deleteArticles = Permission::create(['name' => 'delete articles']);
 
 
 
@@ -40,9 +40,9 @@ class RolesAndPermissionsSeeder extends Seeder
 
         $allPermissions=Permission::all();
         $adminRole->givePermissionTo($allPermissions);
-        $moderatorRole->givePermissionTo([$createPosts,$readPosts,$editPosts,$createComments,$editComments,$readComments,$deleteComments]);
-        $authorRole->givePermissionTo([$createPosts,$readPosts,$createComments,$readComments]);
-        $memberRole->givePermissionTo([$readPosts,$createComments,$readComments]);
+        $moderatorRole->givePermissionTo([$createArticles,$readArticles,$editArticles,$createComments,$editComments,$readComments,$deleteComments]);
+        $authorRole->givePermissionTo([$createArticles,$readArticles,$createComments,$readComments]);
+        $memberRole->givePermissionTo([$readArticles,$createComments,$readComments]);
 
         $admin=User::create([
             "username" => "daja",
